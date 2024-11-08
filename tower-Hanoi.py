@@ -5,7 +5,7 @@ screen = turtle.Screen()
 screen.title("2D Tower of Hanoi - Realistic Version")
 screen.bgcolor("#e0f7fa")  # blue color
 
-# Custom background 
+# Custom bg
 # screen.bgpic('background.gif')
 
 num_disks = int(screen.numinput("Input", "Enter the number of disks (1-10):", minval=1, maxval=10))
