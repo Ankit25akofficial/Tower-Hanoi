@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Song Recommender</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #eb454b, #f9b5a3);
+            color: #333;
+            margin: 0;
+            padding: 40px;
+        
+            
+            
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 100px;
+            color: #fff;
+            text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+            text-decoration-color:aqua;
+            timeline-scope:inherit;
+            user-select: none;
+            
+        }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            border-color: rgb(255, 20, 20);
+            display:-webkit-inline-box;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            user-select: none;
+        }
+        input {
+            padding: 12px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            user-select: none;
+            outline:none;
+            
+            display:-webkit-inline-box;
+        }
+        button {
+            padding: 12px 20px;
+            margin-left: 10px;
+            background: #f74737;
+            color: white;
+            border:3cap;
+            border-radius: 300px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: 0.3s;
+            user-select: none;
+            display:-webkit-inline-box;
+
+        }
+        button:hover {
+            background: #b13f3f;
+            user-select: none;
+            
+        }
+        h2 {
+            margin-top: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            user-select: none;
+        }
+        h3 {
+            color: #fff;
+            user-select: none;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            user-select: none;
+        }
+        li {
+            background: rgba(255, 255, 255, 0.3);
+            margin: 12px auto;
+            padding: 14px;
+            width: 60%;
+            user-select: none;
+            border-radius: 8px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        li:hover {
+            background: rgba(255, 255, 255, 0.5);
+            user-select: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            user-select: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #ff6c5f;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Mood-Based Song Recommender 🎶</h1>
+    <form method="POST">
+        <input type="text" name="mood_input" placeholder="How are you feeling today?" required>
+        <button type="submit">Get Songs</button>
+    </form>
+    {% if mood %}
+        <h2>Your Mood: {{ mood }}</h2>
+        <h3>Recommended Songs:</h3>
+        <ul>
+            {% for song in songs %}
+                <li>
+                    <a href="{{ song.url }}" target="_blank">{{ song.name }}</a> by {{ song.artist }}
+                </li>
+            {% endfor %}
+                
+        </ul>
+    {% endif %}
+
+</body>
+<footer>
+    <div>
+        <h4> Thank You !!</h4>
+    </div>
+</footer>
+</html>
